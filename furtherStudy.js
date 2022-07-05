@@ -31,8 +31,27 @@ return list(result)
 
 function wordsInCommon(words1, words2) {
   // Replace this with your code
-}
+  const words1Set = new Set(words1);
+  const words2Set = new Set(words2);
 
-function kidsGame(names) {
-  // Replace this with your code
-}
+  const result = new Set();
+
+  for (const word of words1Set){
+    if (words2Set.has(word)) {
+      result.add(word);
+    };
+  }
+
+  let arrayResult = [...result];
+  
+  return arrayResult;
+
+};
+
+const testList1 = ["Hello", "there", "world"];
+const testList2 = ["Hello", "there", "Sam"]
+
+console.log(wordsInCommon(testList1, testList2))
+// function kidsGame(names) {
+//   // Replace this with your code
+// }
